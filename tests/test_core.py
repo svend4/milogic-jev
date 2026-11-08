@@ -40,7 +40,9 @@ def mock_evaluator(state: str, questions: dict) -> dict:
         elif q.get("type") == "noul":
             out[qid] = {"probability": 0.8, "answer": True}
         elif q.get("type") == "choice":
-            out[qid] = {"choice": "равновесие", "confidence": 0.6}
+            opts = q.get("options", [])
+            choice = "complementary" if "complementary" in opts else (opts[0] if opts else "равновесие")
+            out[qid] = {"choice": choice, "confidence": 0.6}
         else:
             out[qid] = {}
     return out
