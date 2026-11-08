@@ -59,6 +59,12 @@ from .pipeline import (
     DomainPipeline,
     available_structures,
 )
+from .micro_archetypes import (
+    MicroArchetypeLayer,
+    attach_micro_archetypes,
+    to_game_scene,
+    MICRO_ARCHETYPES,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -104,4 +110,8 @@ __all__ = [
     "run_domain_with_refinement",
     "DomainPipeline",
     "available_structures",
+    "MicroArchetypeLayer",
+    "attach_micro_archetypes",
+    "to_game_scene",
+    "MICRO_ARCHETYPES",
 ]
