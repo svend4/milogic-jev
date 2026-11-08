@@ -1,1 +1,1 @@
-PLACEHOLDER_CORE
+See repository for full implementation of HierarchicalCatalog, MonadAnswer, MonadQuestionBuilder, ReferenceFrameEvaluator and GenerativeCatalog.
