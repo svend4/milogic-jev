@@ -65,6 +65,16 @@ from .micro_archetypes import (
     to_game_scene,
     MICRO_ARCHETYPES,
 )
+from .carriers import (
+    build_carrier_catalog,
+    list_carriers,
+    get_carrier,
+    CARRIERS,
+)
+from .carrier_scenes import (
+    CarrierSceneLayer,
+    carrier_to_scene,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -114,4 +124,10 @@ __all__ = [
     "attach_micro_archetypes",
     "to_game_scene",
     "MICRO_ARCHETYPES",
+    "build_carrier_catalog",
+    "list_carriers",
+    "get_carrier",
+    "CARRIERS",
+    "CarrierSceneLayer",
+    "carrier_to_scene",
 ]
