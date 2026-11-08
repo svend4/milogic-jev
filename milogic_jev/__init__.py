@@ -59,6 +59,9 @@ from .pipeline import (
     DomainPipeline,
     available_structures,
 )
+from .pipeline_full import (
+    run_full,
+)
 from .micro_archetypes import (
     MicroArchetypeLayer,
     attach_micro_archetypes,
@@ -120,6 +123,7 @@ __all__ = [
     "run_domain_with_refinement",
     "DomainPipeline",
     "available_structures",
+    "run_full",
     "MicroArchetypeLayer",
     "attach_micro_archetypes",
     "to_game_scene",
