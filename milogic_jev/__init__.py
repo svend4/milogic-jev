@@ -35,8 +35,14 @@ from .variants import (
 from .symbolic import (
     SymbolicAdvisor,
     build_tarot_business_catalog,
-    build_domain_catalog,
     MAJOR_ARCANA_BUSINESS,
+)
+from .catalogs_extended import (
+    build_domain_catalog,
+    build_iching_catalog,
+    build_social_catalog,
+    list_domains,
+    DOMAINS,
 )
 
 __all__ = [
@@ -68,6 +74,10 @@ __all__ = [
     "HybridOrchestrator",
     "SymbolicAdvisor",
     "build_tarot_business_catalog",
-    "build_domain_catalog",
     "MAJOR_ARCANA_BUSINESS",
+    "build_domain_catalog",
+    "build_iching_catalog",
+    "build_social_catalog",
+    "list_domains",
+    "DOMAINS",
 ]
