@@ -78,6 +78,17 @@ from .carrier_scenes import (
     CarrierSceneLayer,
     carrier_to_scene,
 )
+from .journal import (
+    JournalRecorder,
+    append_entry,
+    load_journal,
+    summary,
+)
+from .prompts import (
+    monad_to_prompt,
+    prompts_from_micro,
+    prompts_from_carriers,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -134,4 +145,11 @@ __all__ = [
     "CARRIERS",
     "CarrierSceneLayer",
     "carrier_to_scene",
+    "JournalRecorder",
+    "append_entry",
+    "load_journal",
+    "summary",
+    "monad_to_prompt",
+    "prompts_from_micro",
+    "prompts_from_carriers",
 ]
