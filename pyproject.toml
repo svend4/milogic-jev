@@ -1,0 +1,14 @@
+[project]
+name = "milogic-jev"
+version = "0.1.0"
+description = "Hierarchical dual-relation decision systems combining Jev-style structured questions with Milogiya principles"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "svend4"}]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["milogic_jev*"]
