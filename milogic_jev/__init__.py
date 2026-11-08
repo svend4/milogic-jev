@@ -44,6 +44,11 @@ from .catalogs_extended import (
     list_domains,
     DOMAINS,
 )
+from .kryukov_extension import (
+    StructureExpander,
+    expand_monad_to_structure,
+    STRUCTURES,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -80,4 +85,7 @@ __all__ = [
     "build_social_catalog",
     "list_domains",
     "DOMAINS",
+    "StructureExpander",
+    "expand_monad_to_structure",
+    "STRUCTURES",
 ]
