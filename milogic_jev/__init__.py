@@ -16,6 +16,22 @@ from .catalogs import (
     PARTICLE_HIERARCHY,
     SOCIAL_HIERARCHY,
 )
+from .variants import (
+    FixedShellCatalog,
+    NestedSubshellCatalog,
+    OpenMonadBuilder,
+    MultiMonadEvaluator,
+    TemporalMonad,
+    EvolutionarySelector,
+    BoundedGrowthCatalog,
+    InvariantSearcher,
+    AdaptiveFrameEvaluator,
+    ClosureComposer,
+    MultiLevelState,
+    MultiLevelEvaluator,
+    DualityCalibrationLog,
+    HybridOrchestrator,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -30,4 +46,18 @@ __all__ = [
     "CHEMICAL_HIERARCHY",
     "PARTICLE_HIERARCHY",
     "SOCIAL_HIERARCHY",
+    "FixedShellCatalog",
+    "NestedSubshellCatalog",
+    "OpenMonadBuilder",
+    "MultiMonadEvaluator",
+    "TemporalMonad",
+    "EvolutionarySelector",
+    "BoundedGrowthCatalog",
+    "InvariantSearcher",
+    "AdaptiveFrameEvaluator",
+    "ClosureComposer",
+    "MultiLevelState",
+    "MultiLevelEvaluator",
+    "DualityCalibrationLog",
+    "HybridOrchestrator",
 ]
