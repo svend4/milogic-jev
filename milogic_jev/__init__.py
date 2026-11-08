@@ -49,6 +49,11 @@ from .kryukov_extension import (
     expand_monad_to_structure,
     STRUCTURES,
 )
+from .refinement import (
+    RefinementOrchestrator,
+    monad_to_subcatalog,
+    refine_all_strong,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -88,4 +93,7 @@ __all__ = [
     "StructureExpander",
     "expand_monad_to_structure",
     "STRUCTURES",
+    "RefinementOrchestrator",
+    "monad_to_subcatalog",
+    "refine_all_strong",
 ]
