@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milogic-Jev — Демо вариантов</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --surface: #1a2332;
+    --surface2: #243044;
+    --text: #e7ecf3;
+    --muted: #8b9bb4;
+    --accent: #5b9cff;
+    --accent2: #7c5cff;
+    --good: #3dd68c;
+    --border: #2d3a4f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    padding: 28px 24px 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #152033, var(--bg));
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.6rem; }
+  header p { margin: 0; color: var(--muted); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 0.7rem;
+    background: var(--accent2);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .desc { color: var(--muted); font-size: 0.88rem; margin: 0; }
+  pre {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 0;
+    font-size: 0.78rem;
+    overflow: auto;
+    max-height: 220px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  button:hover { filter: brightness(1.1); }
+  .status { font-size: 0.8rem; color: var(--good); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 20px;
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Milogic-Jev — Демо всех вариантов</h1>
+  <p>Интерактивная визуализация классов: иерархические оболочки, монады, генерация, системы отсчёта, замыкание и гибрид.</p>
+</header>
+
+<div class="container">
+  <div class="grid" id="cards"></div>
+</div>
+
+<footer>
+  Репозиторий: <a href="https://github.com/svend4/milogic-jev" target="_blank">github.com/svend4/milogic-jev</a>
+</footer>
+
+<script>
+const variants = [
+  { id: "fixed", title: "1. Fixed Shells", badge: "Иерархия", desc: "Жёсткая иерархия: уровни выполняются строго по порядку.", run: () => ({ L0: { q: { probability: 0.75, answer: true } }, L1: { q2: { value: 7.5, confidence: 0.7 } } }) },
+  { id: "nested", title: "1. Nested Subshell", badge: "Иерархия", desc: "Вложенные подоболочки при сильном ответе.", run: () => ({ base: { value: 7.5, confidence: 0.7 }, base_sub: { detail: { type: "noul", probability: 0.68 } } }) },
+  { id: "open", title: "2. Open Monad", badge: "Монада", desc: "Модель сама предлагает второй полюс.", run: () => ({ propose_pole_b: { choice: "смысл", confidence: 0.71 }, closure: { value: 8.1 }, generates_higher: { probability: 0.66, answer: true } }) },
+  { id: "multi", title: "2. Multi-Monad", badge: "Монада", desc: "Несколько двойственностей + общая согласованность.", run: () => ({ form_content: { type: "monad", closure: 0.78, dominant: "форма" }, intention_meaning: { type: "monad", closure: 0.84, dominant: "замысел" }, overall_coherence: { value: 7.9 } }) },
+  { id: "temporal", title: "2. Temporal Monad", badge: "Монада", desc: "Сравнение двойственности до и после.", run: () => ({ before: { closure: 0.62, dominant: "замысел" }, after: { closure: 0.81, dominant: "смысл" }, direction: { choice: "усилилось" } }) },
+  { id: "evolutionary", title: "3. Evolutionary Selector", badge: "Генерация", desc: "Отбор лучшей формулировки по среднему и стабильности.", run: () => ([ { criteria: "формулировка A", mean: 0.803, stdev: 0.015, score: 0.788 }, { criteria: "формулировка B", mean: 0.633, stdev: 0.252, score: 0.381 } ]) },
+  { id: "bounded", title: "3. Bounded Growth", badge: "Генерация", desc: "Ограничение числа подоболочек.", run: () => ({ level: "L0", created: 1, max: 3, can_add: true }) },
+  { id: "composer", title: "5. Closure Composer", badge: "Замыкание", desc: "Сильно замкнутые монады собираются в композицию.", run: () => ({ closed_monads: [{ id: "m", pole_a: "замысел", pole_b: "смысл", closure: 0.84 }], atomic: {} }) },
+  { id: "multilevel", title: "6. Multi-Level State", badge: "Состояние", desc: "Иерархическое состояние, вопросы к уровням.", run: () => ({ prompt: "[L0]\nатом водорода\n\n[L1]\nпериодическая система", target_levels: ["L0", "L1"] }) },
+  { id: "calibration", title: "7. Calibration Log", badge: "Калибровка", desc: "Накопление статистики по двойственностям.", run: () => ({ count: 4, mean_closure: 0.76, high_closure_ratio: 0.75, generate_ratio: 0.5 }) },
+  { id: "hybrid", title: "8. Hybrid Orchestrator", badge: "Гибрид", desc: "Полный цикл: каталог → композиция → предложения → калибровка.", run: () => ({ suggestions: 1, calibration: { count: 1, mean_closure: 0.81, high_closure_ratio: 1.0 }, next_level: "ядерные оболочки" }) },
+  { id: "frames", title: "4. Reference Frames", badge: "Отсчёт", desc: "Несколько систем отсчёта + поиск инварианта.", run: () => ({ best_frame: "двойственный", best_confidence: 0.74, invariants: ["closure_strength"] }) }
+];
+
+const container = document.getElementById("cards");
+
+variants.forEach(v => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <h2>${v.title} <span class="badge">${v.badge}</span></h2>
+    <p class="desc">${v.desc}</p>
+    <button data-id="${v.id}">Запустить</button>
+    <div class="status" id="status-${v.id}"></div>
+    <pre id="out-${v.id}">Нажмите «Запустить»</pre>
+  `;
+  container.appendChild(card);
+});
+
+document.querySelectorAll("button[data-id]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+    const variant = variants.find(x => x.id === id);
+    const out = document.getElementById("out-" + id);
+    const status = document.getElementById("status-" + id);
+    status.textContent = "Выполняется…";
+    setTimeout(() => {
+      const result = variant.run();
+      out.textContent = JSON.stringify(result, null, 2);
+      status.textContent = "Готово";
+    }, 180);
+  });
+});
+</script>
+</body>
+</html>
