@@ -32,6 +32,12 @@ from .variants import (
     DualityCalibrationLog,
     HybridOrchestrator,
 )
+from .symbolic import (
+    SymbolicAdvisor,
+    build_tarot_business_catalog,
+    build_domain_catalog,
+    MAJOR_ARCANA_BUSINESS,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -60,4 +66,8 @@ __all__ = [
     "MultiLevelEvaluator",
     "DualityCalibrationLog",
     "HybridOrchestrator",
+    "SymbolicAdvisor",
+    "build_tarot_business_catalog",
+    "build_domain_catalog",
+    "MAJOR_ARCANA_BUSINESS",
 ]
