@@ -54,6 +54,11 @@ from .refinement import (
     monad_to_subcatalog,
     refine_all_strong,
 )
+from .pipeline import (
+    run_domain_with_refinement,
+    DomainPipeline,
+    available_structures,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -96,4 +101,7 @@ __all__ = [
     "RefinementOrchestrator",
     "monad_to_subcatalog",
     "refine_all_strong",
+    "run_domain_with_refinement",
+    "DomainPipeline",
+    "available_structures",
 ]
