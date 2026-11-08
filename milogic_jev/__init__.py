@@ -92,6 +92,10 @@ from .prompts import (
     prompts_from_micro,
     prompts_from_carriers,
 )
+from .compare import (
+    compare_domains,
+    all_domain_summary,
+)
 
 __all__ = [
     "MonadAnswer",
@@ -156,4 +160,6 @@ __all__ = [
     "monad_to_prompt",
     "prompts_from_micro",
     "prompts_from_carriers",
+    "compare_domains",
+    "all_domain_summary",
 ]
