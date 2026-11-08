@@ -62,6 +62,9 @@ from .pipeline import (
 from .pipeline_full import (
     run_full,
 )
+from .pipeline_journal import (
+    run_full_with_journal,
+)
 from .micro_archetypes import (
     MicroArchetypeLayer,
     attach_micro_archetypes,
@@ -135,6 +138,7 @@ __all__ = [
     "DomainPipeline",
     "available_structures",
     "run_full",
+    "run_full_with_journal",
     "MicroArchetypeLayer",
     "attach_micro_archetypes",
     "to_game_scene",
